@@ -1,0 +1,3 @@
+flask>=3.0
+# Serve solo su Render (su Windows si installa ma non parte: in locale usa python app.py)
+gunicorn>=21.0

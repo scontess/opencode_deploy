@@ -1,0 +1,19 @@
+# Blueprint Render per l'app Flask (deploy_flask/).
+# Si usa quando il progetto è su un repo Git: Render Dashboard > New > Blueprint,
+# oppure il tool create_web_service dell'MCP render.
+services:
+  - type: web
+    name: deploy-flask
+    runtime: python
+    plan: free
+    region: frankfurt
+    rootDir: deploy_flask
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT
+    healthCheckPath: /health
+    autoDeployTrigger: commit
+    envVars:
+      - key: FLASK_DEBUG
+        value: "0"
+      - key: PYTHON_VERSION
+        value: "3.12.0"

@@ -1,0 +1,51 @@
+﻿data;cliente;agente;fatturato;regione;prodotto
+12/01/2026;Officine Subalpine S.r.l.;Giulia Ferrari;11710;Piemonte;Backup Cloud 5 TB
+14/01/2026;Logistica Navigli S.r.l.;Marco Bianchi;11500;Lombardia;Notebook Business (lotto 10 pz)
+18/01/2026;Agrifood Parma S.r.l.;Sara Conti;2130;Emilia-Romagna;Switch di rete 48 porte
+28/01/2026;Cantieri Golfo S.p.A.;Chiara Esposito;740;Campania;Backup Cloud 5 TB
+01/02/2026;Studio Ingegneria Napolitano;Chiara Esposito;3710;Campania;Firewall UTM
+04/02/2026;Agrifood Parma S.r.l.;Sara Conti;7160;Emilia-Romagna;Gestionale ERP Cloud
+07/02/2026;Tessile Lariana S.p.A.;Marco Bianchi;2900;Lombardia;Firewall UTM
+10/02/2026;Ceramiche Sassuolo S.p.A.;Sara Conti;11410;Emilia-Romagna;Gestionale ERP Cloud
+17/02/2026;Studio Associato Colombo;Marco Bianchi;1060;Lombardia;Switch di rete 48 porte
+21/02/2026;Torino Packaging S.r.l.;Giulia Ferrari;6490;Piemonte;Gestionale ERP Cloud
+25/02/2026;Motori Modena S.r.l.;Sara Conti;9810;Emilia-Romagna;Gestionale ERP Cloud
+02/03/2026;Agrumeti Etnei S.r.l.;Elena Russo;3580;Sicilia;Licenze Microsoft 365 (50 utenti)
+04/03/2026;Edilizia Tiberina S.r.l.;Andrea Romano;2080;Lazio;Backup Cloud 5 TB
+10/03/2026;Agrumeti Etnei S.r.l.;Elena Russo;7560;Sicilia;Licenze Microsoft 365 (50 utenti)
+17/03/2026;Cartiera Lucchese S.r.l.;Davide Greco;2280;Toscana;Assistenza Annuale Premium
+17/04/2026;Marmi Apuani S.p.A.;Davide Greco;2450;Toscana;Switch di rete 48 porte
+24/04/2026;Motori Modena S.r.l.;Sara Conti;1590;Emilia-Romagna;Backup Cloud 5 TB
+30/04/2026;Ittica Mediterranea S.r.l.;Elena Russo;10060;Sicilia;Gestionale ERP Cloud
+02/05/2026;Motori Modena S.r.l.;Sara Conti;3660;Emilia-Romagna;Licenze Microsoft 365 (50 utenti)
+07/05/2026;Studio Legale Gallo;Giulia Ferrari;5720;Piemonte;Licenze Microsoft 365 (50 utenti)
+10/05/2026;Cantine Langhe S.p.A.;Giulia Ferrari;2390;Piemonte;Switch di rete 48 porte
+10/05/2026;Officine Subalpine S.r.l.;Giulia Ferrari;1160;Piemonte;Backup Cloud 5 TB
+19/05/2026;Occhialeria Cadore S.r.l.;Luca Moretti;17830;Veneto;Gestionale ERP Cloud
+20/05/2026;Occhialeria Cadore S.r.l.;Luca Moretti;1240;Veneto;Switch di rete 48 porte
+21/05/2026;Hotel Laguna S.r.l.;Luca Moretti;9220;Veneto;Notebook Business (lotto 10 pz)
+27/05/2026;Cantine Siciliane S.p.A.;Elena Russo;2550;Sicilia;Firewall UTM
+04/06/2026;Torino Packaging S.r.l.;Giulia Ferrari;15040;Piemonte;Gestionale ERP Cloud
+26/06/2026;Conserve Sarnesi S.r.l.;Chiara Esposito;2080;Campania;Assistenza Annuale Premium
+27/06/2026;Officine Subalpine S.r.l.;Giulia Ferrari;4780;Piemonte;Firewall UTM
+07/07/2026;Officine Subalpine S.r.l.;Giulia Ferrari;2200;Piemonte;Firewall UTM
+10/07/2026;Vivai Pistoiesi S.r.l.;Davide Greco;4400;Toscana;Firewall UTM
+15/07/2026;Ristorazione Trastevere S.r.l.;Andrea Romano;1930;Lazio;Backup Cloud 5 TB
+09/08/2026;Edilizia Tiberina S.r.l.;Andrea Romano;4510;Lazio;Licenze Microsoft 365 (50 utenti)
+12/08/2026;Motori Modena S.r.l.;Sara Conti;1800;Emilia-Romagna;Backup Cloud 5 TB
+13/08/2026;Marmi Apuani S.p.A.;Davide Greco;7590;Toscana;Gestionale ERP Cloud
+15/08/2026;Trasporti Pontini S.r.l.;Andrea Romano;10810;Lazio;Gestionale ERP Cloud
+19/08/2026;Cantine Siciliane S.p.A.;Elena Russo;3820;Sicilia;Licenze Microsoft 365 (50 utenti)
+28/08/2026;Conserve Sarnesi S.r.l.;Chiara Esposito;3560;Campania;Licenze Microsoft 365 (50 utenti)
+01/09/2026;Torino Packaging S.r.l.;Giulia Ferrari;4240;Piemonte;Firewall UTM
+04/09/2026;Occhialeria Cadore S.r.l.;Luca Moretti;4410;Veneto;Assistenza Annuale Premium
+17/09/2026;Motori Modena S.r.l.;Sara Conti;3880;Emilia-Romagna;Assistenza Annuale Premium
+21/09/2026;Calzaturificio Brenta S.r.l.;Luca Moretti;5640;Veneto;Licenze Microsoft 365 (50 utenti)
+22/09/2026;Vivai Pistoiesi S.r.l.;Davide Greco;1770;Toscana;Assistenza Annuale Premium
+06/10/2026;Cantine Langhe S.p.A.;Giulia Ferrari;1980;Piemonte;Assistenza Annuale Premium
+08/10/2026;Agrifood Parma S.r.l.;Sara Conti;8820;Emilia-Romagna;Notebook Business (lotto 10 pz)
+11/10/2026;Agrifood Parma S.r.l.;Sara Conti;810;Emilia-Romagna;Backup Cloud 5 TB
+15/10/2026;Studio Legale Gallo;Giulia Ferrari;15640;Piemonte;Gestionale ERP Cloud
+17/10/2026;Occhialeria Cadore S.r.l.;Luca Moretti;2900;Veneto;Firewall UTM
+02/11/2026;Clinica Dentale Riviera;Sara Conti;3040;Emilia-Romagna;Assistenza Annuale Premium
+06/11/2026;Idraulica Veneta S.p.A.;Luca Moretti;6660;Veneto;Licenze Microsoft 365 (50 utenti)

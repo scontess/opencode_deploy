@@ -1,0 +1,22 @@
+# Configurazione Netlify (una sola, alla radice del progetto).
+# Pubblicala solo la dashboard statica: il venv e il codice Flask restano fuori.
+
+[build]
+  publish = "Dashboard_Vendite"
+
+# La pagina principale è la dashboard.
+[[redirects]]
+  from = "/"
+  to = "/dashboard_vendite.html"
+  status = 200
+
+# La dashboard rilegge il CSV ogni 2 secondi: evita copie vecchie dal CDN.
+[[headers]]
+  for = "/vendite_2026.csv"
+  [headers.values]
+    Cache-Control = "no-store, max-age=0"
+
+[[headers]]
+  for = "/dashboard_vendite.html"
+  [headers.values]
+    Cache-Control = "no-cache"

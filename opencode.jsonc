@@ -1,0 +1,76 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+
+  // ───────────────────────────────────────────────────────────────
+  // Configurazione di PROGETTO (sovrascrive quella globale in
+  // C:\Users\silva\.config\opencode\opencode.jsonc).
+  // Le voci commentate sono esempi: togli i // per attivarle.
+  // ───────────────────────────────────────────────────────────────
+
+  // Modello e agente predefiniti
+  // "model": "provider/model",
+  // "default_agent": "build",
+
+  // File di istruzioni extra, oltre ad AGENTS.md (glob e URL ammessi)
+  // "instructions": ["docs/linee-guida/*.md"],
+
+  // Agenti definiti qui invece che in .opencode/agents/*.md
+  "agents": {},
+
+  // Comandi slash definiti qui invece che in .opencode/commands/*.md
+  "commands": {},
+
+  // Cartelle/URL aggiuntivi da cui caricare skill
+  // "skills": ["./skill-condivise", "https://example.com/opencode/skills/"],
+
+  // Server MCP (i server in .opencode/plugins/ NON sono MCP)
+  "mcp": {
+    "servers": {
+      // --- Render: deploy dell'app Flask ---------------------------------
+      // Attivo quando esiste la variabile d'ambiente RENDER_API_KEY.
+      // Per ora disabilitato: non c'è ancora una chiave né un repo Git.
+      "render": {
+        "type": "remote",
+        "url": "https://mcp.render.com/mcp",
+        "headers": { "Authorization": "Bearer {env:RENDER_API_KEY}" },
+        "disabled": true
+      },
+
+      // --- Netlify: deploy della dashboard statica -----------------------
+      // Server remoto ufficiale, autenticazione OAuth (nessun token nel file).
+      // Prima volta: /mcps > netlify > sign in.
+      "netlify": {
+        "type": "remote",
+        "url": "https://mcp.netlify.com/mcp"
+      }
+
+      // Alternativa locale (se i server remoti sono bloccati):
+      // "netlify": {
+      //   "type": "local",
+      //   "command": ["npx", "-y", "@netlify/mcp"],
+      //   "environment": {
+      //     "NETLIFY_PERSONAL_ACCESS_TOKEN": "{env:NETLIFY_PERSONAL_ACCESS_TOKEN}"
+      //   }
+      // }
+    }
+  },
+
+  // Plugin: pacchetti npm o cartelle locali.
+  // Quelli dentro .opencode/plugins/ si caricano da soli, senza elenco.
+  // "plugins": ["opencode-acme-plugin", "./plugins/mio-plugin"],
+
+  // Permessi (l'ultima regola che combacia vince)
+  // "permissions": [
+  //   { "action": "shell", "resource": "git push *", "effect": "ask" },
+  //   { "action": "edit", "resource": "*.env", "effect": "deny" }
+  // ],
+
+  // Formattazione automatica dopo write/edit
+  // "formatter": true,
+
+  // Cartella dei worktree creati da OpenCode
+  // "worktree": { "directory": "../worktrees" },
+
+  // Compattazione del contesto
+  // "compaction": { "auto": true }
+}
