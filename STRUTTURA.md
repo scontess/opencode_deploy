@@ -5,7 +5,7 @@ Progetto predefinito\
 ├── AGENTS.md                  istruzioni di progetto (caricate sempre)
 ├── STRUTTURA.md               questa mappa
 ├── opencode.jsonc             config progetto + server MCP (render, netlify)
-├── render.yaml                Blueprint Render per l'app Flask (pronto, spento)
+├── render.yaml                Blueprint Render per l'app Flask (✅ deployato)
 ├── netlify.toml               config Netlify (publish = "Dashboard_Vendite")
 ├── .gitignore                 venv, cache, .netlify, segreti
 │
@@ -43,6 +43,8 @@ da OpenCode (non sono `.md`).
 | `Dashboard_Vendite\` | **Netlify** (static site) | HTML + CSV così come sono | `netlify.toml` alla radice (`publish`) |
 
 Sito live: **https://dashboard-vendite.netlify.app** (`/` → `dashboard_vendite.html`).
+App live: **https://deploy-flask-4wfz.onrender.com** (`/health` → `{"status":"ok"}`).
+Con Render l'auto-deploy è attivo: `git push` su `main` → nuovo deploy automatico.
 Il venv `.venv\` serve solo in locale: su Render si ricostruisce da `requirements.txt`, su Netlify non viene pubblicato.
 
 ## Cosa va dove (parte OpenCode)

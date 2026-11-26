@@ -18,3 +18,8 @@ Thumbs.db
 # Segreti: mai committare token
 .env
 .env.*
+
+# File locali con segreti (mai committare)
+apikey.txt
+*.key
+secrets*

@@ -5,7 +5,7 @@
 - `deploy_flask\` — app Flask (`app.py`, `templates\index.html`, `requirements.txt`, venv in `.venv\`)
 - `Dashboard_Vendite\` — dashboard statica autonoma (`dashboard_vendite.html` + `vendite_2026.csv`)
 - `netlify.toml` — config Netlify alla radice (`publish = "Dashboard_Vendite"`, redirect `/`)
-- `render.yaml` — Blueprint Render per l'app Flask (pronto, **non** ancora deployato)
+- `render.yaml` — Blueprint Render per l'app Flask (✅ deployato)
 - `opencode.jsonc` — config di progetto, inclusi i server MCP
 - `.opencode\` — agenti, comandi, skill, plugin (+ `templates\` non scoperta)
 
@@ -62,17 +62,31 @@ Oppure apri l'HTML e usa "Collega vendite_2026.csv" (solo Chrome/Edge).
   (su PowerShell serve `cmd /c npx ...`). Poi verificare l'URL pubblico.
 - Fallback: `npx netlify-cli deploy --dir=Dashboard_Vendite --prod` con `NETLIFY_AUTH_TOKEN`.
 
-### Render — app Flask (predisposto, spento)
+### Render — app Flask (✅ deployata)
 
-- **Prerequisito**: repo Git **`scontess/opencode_deploy`** (pubblico, `main`) e account GitHub collegato a Render una volta. Non si deploya da una cartella locale.
+- Live: **https://deploy-flask-4wfz.onrender.com** — `/health` → `{"status":"ok"}`, `/` → pagina (0 errori console)
+- Servizio `deploy-flask`, id `srv-dc3n573l550s73evfpr0`, Blueprint `exs-dc3n2ot6e07s73cvnfj0`,
+  workspace `My Workspace` (`tea-dbk91sks728c73cfmfdg`), repo `scontess/opencode_deploy` branch `main`
+- Primo deploy dal commit `a874594` (26/11/2026, trigger `blueprint_sync`)
+- ✅ **Auto-deploy attivo**: `autoDeploy: yes` + `autoDeployTrigger: commit` → un `git push` su `main`
+  crea da solo un deploy (trigger `new_commit`). Il pulsante "Manual sync" del Blueprint serve solo
+  a riapplicare il `render.yaml`, non a deployare il codice.
+- ⚠️ Piano free: sleep dopo ~15 min di inattività, primo accesso 30-60 s
+- La pagina mostra indirizzo reale (`X-Forwarded-Proto` + `request.host`) e ora in `Europe/Rome`
+  (`APP_TIMEZONE`, default `Europe/Rome`; `tzdata` in `requirements.txt` per Windows).
+  Fix nel commit `9417d33`.
 - `render.yaml` (root del repo): `rootDir: deploy_flask`, build `pip install -r requirements.txt`, start `gunicorn app:app --bind 0.0.0.0:$PORT`, health check `/health`, piano free, region frankfurt.
-- MCP `render` in `opencode.jsonc` è **`disabled: true`**: va attivato dopo aver creato `RENDER_API_KEY`.
-- Tool principali: `create_web_service`, `trigger_deploy`, `list_deploys`, `list_logs`.
+- MCP `render` **attivo** (Bearer `{env:RENDER_API_KEY}`, Read ovunque + Run su Deploys).
+  Tool usati: `list_workspaces`, `list_services`, `list_deploys`, `trigger_deploy`, `list_logs`, `get_deploy`.
 - **Limite noto dell'MCP**: `create_web_service` non espone né `rootDir` né il piano `free`
   (accetta solo starter/standard/pro…). Percorso corretto: **Blueprint**
   (`create_blueprint` → `plan_blueprint` → `approve_blueprint`), che legge `render.yaml`
   e quindi rispetta `rootDir: deploy_flask` e `plan: free`. In alternativa: dashboard → New → Blueprint.
 - I tool Blueprint sono in **alpha pubblica**: contratti soggetti a cambiamenti.
+- ⚠️ Nella stessa workspace/progetto c'è **`pianificazione_orario`** (id `srv-dbk98tec6qcc73dtm20g`,
+  repo `scontess/pianificazione_orario`, URL pianificazione-orario.onrender.com): è un'altra app,
+  **non toccarla** quando si lavora su `deploy-flask`. Nota: il servizio si chiama con `_` ma
+  l'URL usa `-` (Render converte gli underscore nei sottodomini).
 
 ### Segreti
 
@@ -88,8 +102,8 @@ $cli = "$env:APPDATA\ai.opencode.desktop\cli\2.4.1-x64\opencode-cli.exe"
 
 | Nome | Tipo | Endpoint | Auth | Stato |
 |---|---|---|---|---|
-| `netlify` | remote | `https://mcp.netlify.com/mcp` | OAuth (`/mcps`) | da autenticare |
-| `render` | remote | `https://mcp.render.com/mcp` | Bearer `{env:RENDER_API_KEY}` | `disabled: true` |
+| `netlify` | remote | `https://mcp.netlify.com/mcp` | OAuth (`/mcps`) | ✅ connected |
+| `render` | remote | `https://mcp.render.com/mcp` | Bearer `{env:RENDER_API_KEY}` | ✅ connected |
 
 Alternativa locale Netlify: `npx -y @netlify/mcp` con `NETLIFY_PERSONAL_ACCESS_TOKEN` (commentata nel config).
 
