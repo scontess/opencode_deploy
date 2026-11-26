@@ -102,6 +102,7 @@ $cli = "$env:APPDATA\ai.opencode.desktop\cli\2.4.1-x64\opencode-cli.exe"
 `apikey.txt` con la chiave Render è finito in un commit su repo **pubblico** (poi rimosso
 con amend + force-push, chiave revocata). Ora `.gitignore` esclude `apikey.txt`, `*.key`,
 `secrets*`, ma la regola resta: **stage per nome di file**.
+La chiave attuale sta in **`C:\Users\silva\Documents\apikey.txt`**, fuori dal repo.
 
 ## MCP configurati
 
