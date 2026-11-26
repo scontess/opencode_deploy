@@ -27,8 +27,8 @@
   "mcp": {
     "servers": {
       // --- Render: deploy dell'app Flask ---------------------------------
-      // Attivo quando esiste la variabile d'ambiente RENDER_API_KEY.
-      // Per ora disabilitato: non c'è ancora una chiave né un repo Git.
+      // Attivo: la chiave arriva dalla variabile d'ambiente RENDER_API_KEY
+      // (impostata con `opencode-cli service set env`, mai scritta qui).
       "render": {
         "type": "remote",
         "url": "https://mcp.render.com/mcp",
