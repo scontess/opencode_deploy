@@ -98,6 +98,11 @@ $cli = "$env:APPDATA\ai.opencode.desktop\cli\2.4.1-x64\opencode-cli.exe"
 & $cli service restart
 ```
 
+⚠️ Non usare `git add -A` / `git add .` alla cieca: il 26/11/2026 un file locale
+`apikey.txt` con la chiave Render è finito in un commit su repo **pubblico** (poi rimosso
+con amend + force-push, chiave revocata). Ora `.gitignore` esclude `apikey.txt`, `*.key`,
+`secrets*`, ma la regola resta: **stage per nome di file**.
+
 ## MCP configurati
 
 | Nome | Tipo | Endpoint | Auth | Stato |
